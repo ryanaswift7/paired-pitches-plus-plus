@@ -1,0 +1,32 @@
+[project]
+name = "paired-pitches-plus-plus"
+version = "0.1.0"
+description = "Pitch sequencing analytics using Statcast data"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb>=1.5.6",
+    "pandas>=3.0.6",
+    "pyarrow>=25.0.1",
+    "pybaseball>=2.2.7",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = ["pytest>=9.1.1", "ruff>=0.16.10"]
